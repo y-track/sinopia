@@ -123,5 +123,14 @@
 
     <script src="{{ baseUrl }}/-/static/jquery.min.js"></script>
     <script type='text/javascript' src='{{ baseUrl }}/-/static/main.js'></script>
+    <script type='text/javascript'>
+$( function() {
+  var entryName = location.hash
+  if (entryName) {
+    entryName = entryName.substring(1);
+    $('a[name='+entryName+']').click();
+  }
+})
+    </script>
   </body>
 </html>

@@ -2,13 +2,16 @@
   <div class="row">
     <div class="col-md-8 col-sm-8">
       <h4 class="title">
-        <a class='name icon-angle-right red' href='javascript:void(0)'>{{ name }}</a>
+        <a class='name icon-angle-right red' href="#{{ name }}" name="{{ name }}">{{ name }}</a>
         <small class='version'>v{{ version }}</small>
       </h4>
     </div>
     <div class="col-md-4 col-sm-4">
       <div class="author pull-right">
-        <small>By: {{ _npmUser.name }}</small>
+        <small>By: <a title="Author" href="mailto://{{ author.email }}" >{{ author.name }}</a></small>
+        {{#each maintainers}}
+          <small>| <a title="Maintainer" href="mailto://{{ email }}" >{{ name }}</a></small>
+        {{/each}}
       </div>
     </div>
   </div>
